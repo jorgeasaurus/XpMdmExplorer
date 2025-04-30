@@ -1,7 +1,7 @@
 # XpMdmExplorer 🌐
 **XpMdmExplorer** is a terminal-based, cross-platform Text User Interface (TUI) for exploring and managing devices, apps, and users in both Microsoft Intune and Jamf Pro. 🚀
 
-![Main UI Screenshot](https://raw.githubusercontent.com/jorgeasaurus/XpMdmExplorer/refs/heads/main/Docs/demo/Demo.gif)
+![Main UI Screenshot](Docs/Images/Welcome.png)
 <!-- TODO: Replace with a real screenshot -->
 
 # Table of Contents
@@ -104,7 +104,7 @@ XpMdmExplorer provides an interactive UI for browsing Microsoft Graph (Intune) a
 - **Settings:** Buildings, Departments, Categories
 
 ## 🖼️ Demo
-![Demo Gif](docs/demo/Demo.gif)
+![Demo Gif](https://raw.githubusercontent.com/jorgeasaurus/XpMdmExplorer/refs/heads/main/Docs/demo/Demo.gif)
 
 ## 📝 Logging
 - Logs are written to `Logs/XpMdmExplorer.log` by default.
