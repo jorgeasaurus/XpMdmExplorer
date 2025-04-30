@@ -1,11 +1,11 @@
-# XPMDMToolkit Module Entry
+# XPMDMExplorer Module Entry
 # Imports all functions from the Functions directory.
-# XPMDMToolkit.psm1
+# XPMDMExplorer.psm1
 
-# Import Functions
-# Import all helper functions
+
 $script:ScriptVer = '0.1.0'
 
+# Import Functions
 Get-ChildItem -Path "$PSScriptRoot/Functions" -Recurse -Include *.ps1 | ForEach-Object {
     . $_.FullName
 }
@@ -14,4 +14,4 @@ Get-ChildItem -Path "$PSScriptRoot/Functions" -Recurse -Include *.ps1 | ForEach-
 Initialize-Logging
 
 # Log module load
-Write-Log -Message "XPMDMToolkit module loaded successfully." -Level "INFO"
+Write-Log -Message "XPMDMExplorer module loaded successfully." -Level "INFO"
