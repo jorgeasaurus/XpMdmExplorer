@@ -1,0 +1,5 @@
+.ENV
+Dev/
+XpMdmExplorer.code-workspace
+# macOS Finder metadata
+.DS_Store
