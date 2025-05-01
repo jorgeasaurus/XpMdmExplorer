@@ -63,7 +63,7 @@ XpMdmExplorer provides an interactive UI for browsing Microsoft Graph (Intune) a
 
 4. **Import the module**
    ```powershell
-   Import-Module .\XpMdmExplorer.psm1
+   Import-Module .\XpMdmExplorer.psm1 -DisableNameChecking
    ```
 
 ## 🎮 Usage
