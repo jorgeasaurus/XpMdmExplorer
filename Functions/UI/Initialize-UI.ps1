@@ -73,7 +73,11 @@ PSVersion $($PSVersionTable.PSVersion)
                 $script:CurrentUser = $script:MgContext | Select-Object -ExpandProperty Account
                 if ($script:CurrentUser) {
                     Write-Log "Connected as $($script:CurrentUser)"
-                    $script:DomainId = (Get-MgDomain | Where-Object { $_.IsDefault }).Id
+                    $script:DomainId = try {
+                        (Get-MgDomain | Where-Object { $_.IsDefault }).Id
+                    } catch {
+                        (Get-MgBetaDomain | Where-Object { $_.IsDefault }).Id
+                    }
                     $script:statusBar.Items[0].Title = "[Intune]$($script:DomainId):Connected"
                     $script:statusBar.Items[4].Title = "Ready"; 
                     [Application]::Refresh()
@@ -243,7 +247,11 @@ function Initialize-StatusBar {
 
     # Intune connection status
     $intuneConnectionStatus = if (Get-MgContext) {
-        $script:DomainId = (Get-MgDomain | Where-Object { $_.IsDefault }).Id
+        $script:DomainId = try {
+            (Get-MgDomain | Where-Object { $_.IsDefault }).Id
+        } catch {
+            (Get-MgBetaDomain | Where-Object { $_.IsDefault }).Id
+        }
         "[Intune]$($script:DomainId):Connected"
     } else {
         "[Intune]Not Connected"
